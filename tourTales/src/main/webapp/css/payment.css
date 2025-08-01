@@ -1,0 +1,53 @@
+.Paymentpage-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.Paymentpage-heading{
+    margin: 30px;
+    font-size: 50px;
+    text-align:center;
+}
+
+.Paymentpage-label{
+    font-size: 15px;
+    color: black;
+    margin-bottom: 5px;
+    display: block;
+    font-weight:bold;
+}
+
+.Paymentpage-input, .Paymentpage-select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+
+ 
+.Paymentpage-submit{
+    width: 100%;
+    background-color: white;
+    color: red;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight:bold;
+}
+
+.Paymentpage-submit:hover {
+    background-color: red;
+    color: black;
+    font-weight:bold;
+    cursor:pointer;
+}

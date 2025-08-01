@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.Userprofilepage{
+		width:300px;
+		margin-left:10px;
+		margin-top :20px;
+		border: solid black;
+}
+
+
+.Userprofilepage-line{
+	
+	padding:10px;
+	font-weight:bold;
+}
+
+.Userprofilepage-body{
+	background-color: white;
+	
+}
+
+#Userprofilepage-upadtebtn, #Userprofilepage-deletebtn, #Userprofilepage-bookingsbtn
+{
+	border:5px red solid;
+	margin-top:20px;
+	padding:10px;
+	font-weight:bold;
+	background-color: white;
+	color:red;
+	border:none;
+}
+
+#Userprofilepage-upadtebtn:hover , #Userprofilepage-deletebtn:hover , #Userprofilepage-bookingsbtn:hover 
+{	
+	
+	background-color: red;
+	color:black;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.Userprofilepage-list
+{
+	list-style-type: none;
+}

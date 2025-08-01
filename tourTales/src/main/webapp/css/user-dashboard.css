@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+}
+
+.user-dashboard {
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+}
+
+.user-sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    position: absolute;
+    height: 100%;
+    justify-content: space-between; 
+    box-sizing: border-box;
+}
+
+
+.user-menu-list {
+    list-style: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-menu-list li {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.user-menu-list li:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+.user-menu-list a {
+    text-decoration: none;
+    color: #34495e;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+
+.user-menu-list a span {
+    transition: color 0.3s ease-in-out;
+}
+
+.user-menu-list a:hover {
+    background-color: #f4b41a;
+    color: white;
+}
+
+.user-menu-list a:hover i {
+    color: white;
+}
+
+.user-menu-list a:hover span {
+    color: white;
+}
+
+.user-menu-list a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: transparent;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.user-menu-list a:hover::before {
+    background-color: white;
+}
+
+.user-logout {
+    width: 100%;
+    margin-top: auto;
+}
+
+.user-logout a {
+    text-decoration: none;
+    color: #34495e;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-logout a:hover {
+    background-color: #f4b41a;
+    color: white;
+}
+
+.user-logout a:hover i {
+    color: white;
+}
+
+.user-content {
+    margin-left: 250px;
+    padding: 30px;
+    background-color: #ecf0f1;
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+}

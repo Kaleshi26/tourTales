@@ -1,0 +1,105 @@
+/* General styles for body */
+
+
+/* Container for the form */
+.tourlist-centered-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Title styling */
+.tourlist-tour-information-box h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form group styling */
+.tourlist-form-group {
+    margin-bottom: 20px;
+}
+
+.tourlist-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.tourlist-form-group input,
+.tourlist-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+/* Textarea styling */
+.tourlist-form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Error message styling */
+.tourlist-error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Required field styling */
+.required {
+    color: #e74c3c;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Link styling */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #8e44ad;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tourlist-centered-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .tourlist-tour-information-box h1 {
+        font-size: 2em;
+    }
+
+    input[type="submit"] {
+        font-size: 1.1em;
+    }
+}

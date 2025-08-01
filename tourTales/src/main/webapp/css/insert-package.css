@@ -1,0 +1,86 @@
+/* Section and Layout */
+.insert-package-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.insert-package-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.insert-package-form-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Back Button */
+.insert-package-back-button-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.insert-package-back-to-dashboard-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.insert-package-back-to-dashboard-btn:hover {
+    background-color: #218838;
+}
+
+/* Form Styles */
+.insert-package-form-group {
+    margin-bottom: 20px;
+}
+
+.insert-package-form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.insert-package-form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.insert-package-form-group input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Submit Button */
+.insert-package-submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.insert-package-submit-btn:hover {
+    background-color: #0056b3;
+}

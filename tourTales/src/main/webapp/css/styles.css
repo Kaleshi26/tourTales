@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import "tour-list.css";
+@import "main.css"; 
+@import "home.css";
+@import "header.css";
+@import "login.css";
+@import "footer.css";
+@import "user-dashboard.css";
+@import "new-bookings.css";
+@import "verify-booking.css";	
+@import "assign-guide.css";
+@import "signup.css";
+@import "messages.css";
+@import "tour-login.css";
+@import "guidedetail.css";
+@import "CustomerBookingDashboard.css"; 
+@import "payment.css"; 
+@import "updateprofile.css"; 
+@import "PackagePage.css";
+@import "UserProfile.css"; 
+@import "contactus.css";
+@import "manage-package.css"; 
+@import "update-package.css";
+@import "insert-package.css";

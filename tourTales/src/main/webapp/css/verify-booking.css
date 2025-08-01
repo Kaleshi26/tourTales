@@ -1,0 +1,98 @@
+.verify-booking-form {
+	margin-inline: 50px;
+}
+
+.verify-booking-title {
+    text-align: center;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.verify-booking-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column {
+    width: 50%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #f4b41a;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f4b41a;
+    padding-bottom: 5px;
+}
+
+.verify-select {
+
+    background-color: #ffffff;
+    color: #34495e;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.section p {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+.right-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.customer-details,
+.tour-guide-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.verify-booking-button {
+    background-color: #f4b41a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    text-align: center; 
+    text-decoration: none;
+}
+
+.verify-booking-button--green {
+    background-color: green;
+}
+
+.verify-booking-button--red {
+    background-color: red;
+}
+
+.assign-tour-guide-button:hover {
+    background-color: #d99910;
+}

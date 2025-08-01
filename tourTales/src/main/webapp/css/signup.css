@@ -1,0 +1,83 @@
+.signup-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.signup-heading {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.signup-form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.signup-form-left,
+.signup-form-right {
+    width: 48%; /* Two columns each taking 48% width */
+}
+
+.signup-field {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.full-width {
+    width: 100%; /* For fields like Confirm Password that span across both columns */
+}
+
+.signup-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.signup-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+
+.signup-text {
+    margin-top: 1rem;
+}
+
+.signup-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}

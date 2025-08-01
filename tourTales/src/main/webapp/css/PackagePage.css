@@ -1,0 +1,56 @@
+
+.packagepage-body {
+   
+    background-color:white;
+    
+}
+
+#Packagespage-heading {
+    margin: 30px;
+    font-size: 50px;
+    text-align:center;
+}
+
+.package-container {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    flex-wrap:wrap;
+   
+}
+
+.package-box {
+    background-color: white;
+    padding: 20px;
+    max-width:30%;
+    border-radius: 8px;
+    border: solid black;
+    text-align: center;
+     margin: 10px auto;
+}
+
+
+
+.package-item h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.package-item p {
+    margin: 15px 0;
+}
+
+.Packagepage-btn {
+	margin-bottom:50px;
+    background-color: white;
+    color:red;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.Packagepage-btn:hover {
+    background-color:red;
+    color:black;
+    cursor:pointer;
+}

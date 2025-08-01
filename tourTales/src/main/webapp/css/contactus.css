@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.contactuspage-body
+{
+	background-color: white;
+}
+
+.contactuspage-heading{
+	margin: 30px;
+    font-size: 50px;
+    text-align:center;
+	
+}
+
+.contactuspage-list
+{
+	list-style-type: none;
+}
+
+.contactuspage-container {
+   width:500px;
+    margin: auto;
+    padding: 20px;
+    border: solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.contactuspage-line
+{
+	font-size: 25px;
+    color: black;
+    margin-bottom: 5px;
+    display: block;
+    font-weight:bold;
+}

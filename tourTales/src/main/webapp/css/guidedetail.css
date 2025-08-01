@@ -1,0 +1,68 @@
+/* General container for centering the content */
+.centered-container {
+    max-width: 800px; /* Max width for the container */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Padding around the container */
+}
+
+/* Styling for the tour information box */
+.tour-information-box {
+    background-color: #fff; /* White background for the box */
+    padding: 30px; /* Inner padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Title styling */
+.tour-information-box h1 {
+    font-size: 2.5em; /* Font size for the main title */
+    color: #34495e; /* Dark color for the title */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Margin below the title */
+}
+
+/* Styling for the list of details */
+.tour-information-box ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+/* Styling for each list item */
+.tour-information-box ul li {
+    font-size: 1.2em; /* Font size for list items */
+    color: #333; /* Dark color for text */
+    margin-bottom: 10px; /* Margin below each item */
+}
+
+/* Styling for bold text within the list */
+.tour-information-box ul li b {
+    color: #2c3e50; /* Darker color for bold text */
+}
+
+/* Button styles */
+.tour-information-box input[type="button"] {
+    background-color: #2ecc71; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding around buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.1em; /* Font size for buttons */
+    margin: 10px 5px; /* Margin around buttons */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Hover effect for buttons */
+.tour-information-box input[type="button"]:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Button for delete with different styling */
+.tour-information-box input[type="button"].delete {
+    background-color: #e74c3c; /* Red background for delete button */
+}
+
+/* Hover effect for delete button */
+.tour-information-box input[type="button"].delete:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}

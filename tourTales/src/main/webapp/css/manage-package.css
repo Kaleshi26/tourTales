@@ -1,0 +1,104 @@
+/* Container and Section */
+.manage-package-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.manage-package-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Title */
+.dashboard-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.add-package-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-package-btn:hover {
+    background-color: #218838;
+}
+
+.update-btn, .delete-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Table */
+.package-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.package-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.package-table th, .package-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.package-table th {
+    font-weight: bold;
+}
+
+.table-row {
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+    background-color: #e9ecef;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+

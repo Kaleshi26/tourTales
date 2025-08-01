@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.UserBookingDashboard-main{
+	background-color: white;
+	
+}
+
+#UserBookingDashboard-profilebtn
+{
+	border:5px red solid;
+	margin-top:20px;
+	padding:10px;
+	font-weight:bold;
+	background-color: white;
+	color:red;
+	border:none;
+}
+
+#UserBookingDashboard-profilebtn:hover
+{
+	background-color: red;
+	color:black;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.bookings{
+		margin-left:10px;
+		margin-top :20px;
+		border: solid black;
+
+}
+
+.bookingpage-line{
+	
+	padding:10px;
+	font-weight:bold;
+}
+
+.bookingpage-list
+{
+	list-style-type: none;
+}
