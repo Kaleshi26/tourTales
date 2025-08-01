@@ -1,0 +1,297 @@
+create database tourTales; 
+use tourTales; 
+
+
+CREATE TABLE User (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,    
+    fname VARCHAR(50),                         
+    lname VARCHAR(50),                         
+    email VARCHAR(100) UNIQUE,    
+    pwd VARCHAR(20),              
+    contact_no VARCHAR(20),                   
+    dob DATE,                                  
+    country VARCHAR(50),
+    permission_level varchar(3)                                  
+);
+
+CREATE TABLE TourGuide (
+    guide_id INT PRIMARY KEY,                                   
+    license_no VARCHAR(50),                      
+    experience_years INT,                         
+    FOREIGN KEY (guide_id) REFERENCES User(user_id)
+        ON DELETE CASCADE ON UPDATE CASCADE       
+);
+
+create table Staff (
+   staffid INT AUTO_INCREMENT PRIMARY KEY,
+   plevel VARCHAR(10),
+   foreign key (staffid) references User(user_id)  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table Customer (
+    customer_ID int primary key, 
+    foreign key (customer_ID) references User(user_id)  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Message (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,      
+    sender_id INT,                                  
+    receiver_id INT,                                
+    message TEXT,                           
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    
+    FOREIGN KEY (sender_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE,        
+    FOREIGN KEY (receiver_id) REFERENCES User(user_id) ON DELETE CASCADE ON UPDATE CASCADE        
+);
+
+CREATE TABLE Package (
+    Pid INT PRIMARY KEY AUTO_INCREMENT,  
+    Pname VARCHAR(50) NOT NULL,  
+    Type VARCHAR(30) NOT NULL,  
+    days INT NOT NULL,  
+    budget DECIMAL(10, 2) NOT NULL  
+);
+
+CREATE TABLE vehicle (
+	Number VARCHAR(20) NOT NULL primary key,  
+    Seat_no INT NOT NULL,  
+    vehicle_name VARCHAR(50) NOT NULL, 
+    Type VARCHAR(20),  
+    Price_Per_Day DECIMAL(10, 2) NOT NULL,  
+    Availability BOOLEAN DEFAULT TRUE,  
+    Type_AC BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE Payment (
+    payment_ID INT PRIMARY KEY AUTO_INCREMENT,  
+    amount DECIMAL(10, 2) NOT NULL,  
+    date DATE NOT NULL  
+);
+
+
+CREATE TABLE BankTransfer (
+    Trans_ID INT PRIMARY KEY,  
+    receipt VARCHAR(50),  
+    FOREIGN KEY (Trans_ID) REFERENCES Payment(payment_ID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE CardPayment (
+    Card_ID INT PRIMARY KEY,  
+    CardNumber VARCHAR(16) NOT NULL,  
+    CVV INT NOT NULL,  
+    FOREIGN KEY (Card_ID) REFERENCES Payment(payment_ID) ON DELETE CASCADE
+);
+
+
+Create table Booking(
+booking_id INT AUTO_INCREMENT PRIMARY KEY,
+Pickup_loc  VARCHAR(16),
+booking_status  VARCHAR(16), 
+no_of_participants INT ,
+TourDate DATE NOT NULL ,
+CurrentLocation  VARCHAR(16), 
+Verification  VARCHAR(16),
+remainingBudget decimal,
+payid INT,
+pid INT,
+cusid INT,
+guide_id INT,
+FOREIGN KEY (payid) REFERENCES Payment(payment_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (pid) REFERENCES Package(Pid) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (cusid) REFERENCES Customer(customer_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (guide_id) REFERENCES TourGuide(guide_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+CREATE TABLE Book_Vehicle (
+    booking_id INT,                               
+    vehicle_id VARCHAR(20),                               
+    vehicle_status VARCHAR(20),                    
+    PRIMARY KEY (booking_id, vehicle_id),          
+    FOREIGN KEY (booking_id) REFERENCES Booking(booking_id)
+        ON DELETE CASCADE ON UPDATE CASCADE,       
+    FOREIGN KEY (vehicle_id) REFERENCES vehicle(Number)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE VerifyBooking (
+    staff_ID INT, 
+    booking_ID INT, 
+    PRIMARY KEY (staff_ID, booking_ID), 
+    FOREIGN KEY (staff_ID) REFERENCES Staff(staffid)
+        ON DELETE CASCADE ON UPDATE CASCADE,       
+    FOREIGN KEY (booking_ID) REFERENCES Booking(booking_id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tourlist (
+    listID INT AUTO_INCREMENT PRIMARY KEY,
+    tourtitle VARCHAR(255) NOT NULL,
+    packagename VARCHAR(255) NOT NULL, -- Changed from tourguidename
+    tourcount INT NOT NULL, -- Changed from tourguideage
+    category VARCHAR(255) NOT NULL,
+    language VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    contactnumber VARCHAR(10) NOT NULL,
+    registrationnumber VARCHAR(10) NOT NULL UNIQUE,
+    description TEXT NOT NULL,
+    duration VARCHAR(50) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+INSERT INTO User (fname, lname, email, pwd, contact_no, dob, country, permission_level) 
+VALUES 
+('John', 'Doe', 'john.doe@example.com', 'password', '+94112223333', '1985-07-15', 'Sri Lanka', 'ADM'),
+('Jane', 'Smith', 'jane.smith@example.com', 'password', '+94114445555', '1990-11-23', 'Sri Lanka', 'STF'),
+('Michael', 'Brown', 'michael.brown@example.com', 'password', '+94116667777', '1982-05-30', 'Sri Lanka', 'TG'),
+('Emily', 'Davis', 'emily.davis@example.com', 'password', '+94118889999', '1995-09-10', 'Sri Lanka', 'TG'),
+('Mark', 'Lee', 'mark.lee@example.com', 'password', '+94113334444', '1988-02-17', 'Sri Lanka', 'CUS'),
+('Sophia', 'Green', 'sophia.green@example.com', 'password', '+94117778888', '1991-12-07', 'Sri Lanka', 'CUS'),
+('David', 'Wilson', 'david.wilson@example.com', 'password', '+94112229999', '1986-06-14', 'Sri Lanka', 'TG'),
+('Olivia', 'Harris', 'olivia.harris@example.com', 'password', '+94114446666', '1994-03-05', 'Sri Lanka', 'TG'),
+('James', 'Martin', 'james.martin@example.com', 'password', '+94116669999', '1989-08-29', 'Sri Lanka', 'CUS'),
+('Lily', 'White', 'lily.white@example.com', 'password', '+94118882222', '1993-01-20', 'Sri Lanka', 'CUS');
+
+
+INSERT INTO TourGuide (guide_id, license_no, experience_years)
+VALUES 
+(3, 'TG-12345', 5),
+(4, 'TG-54321', 3),
+(7, 'TG-98765', 8),
+(8, 'TG-56789', 6);
+
+INSERT INTO Staff (staffid, plevel)
+VALUES 
+(1, 'Admin'),
+(2, 'Manager');
+
+
+INSERT INTO Customer (customer_ID)
+VALUES 
+(5),
+(6),
+(9),
+(10);
+
+
+INSERT INTO Message (sender_id, receiver_id, message)
+VALUES 
+(1, 2, 'Can you review the latest customer feedback?'),
+(2, 1, 'Yes, I’ll handle it today.'),
+(3, 4, 'Please confirm the tour details for next week.'),
+(4, 3, 'Confirmed! The tour details have been updated.'),
+(5, 6, 'We need a quote for the new tour package.'),
+(6, 5, 'I’ll get back to you shortly with the details.'),
+(7, 8, 'Let’s schedule a meeting to discuss the upcoming tour.'),
+(8, 7, 'Sounds good! Let’s meet tomorrow.');
+
+
+INSERT INTO Package (Pname, Type, days, budget)
+VALUES 
+('Cultural Exploration', 'Adventure', 5, 1000.00),
+('Wildlife Safari', 'Safari', 3, 1500.00),
+('Historical Tour', 'History', 7, 2000.00),
+('Beach Relaxation', 'Leisure', 4, 1200.00),
+('Mountain Trekking', 'Adventure', 6, 1800.00),
+('City Highlights', 'Leisure', 2, 500.00),
+('Heritage Walk', 'History', 1, 300.00),
+('Waterfall Expedition', 'Adventure', 4, 900.00),
+('Bird Watching', 'Safari', 3, 800.00),
+('Island Hopping', 'Leisure', 5, 1100.00);
+
+
+INSERT INTO vehicle (Number, Seat_no, vehicle_name, Type, Price_Per_Day, Availability, Type_AC)
+VALUES 
+('SL-1234', 12, 'Toyota HiAce', 'Van', 100.00, TRUE, TRUE),
+('SL-5678', 40, 'Scania Bus', 'Bus', 300.00, TRUE, TRUE),
+('SL-9876', 20, 'Nissan Urvan', 'Van', 150.00, TRUE, FALSE),
+('SL-4321', 8, 'Honda Shuttle', 'SUV', 120.00, TRUE, TRUE),
+('SL-8765', 15, 'Mercedes Sprinter', 'Minibus', 180.00, TRUE, TRUE),
+('SL-1122', 12, 'Ford Transit', 'Van', 130.00, TRUE, TRUE),
+('SL-5566', 40, 'Volvo Bus', 'Bus', 310.00, TRUE, TRUE),
+('SL-2233', 4, 'Suzuki Jimny', 'Jeep', 90.00, TRUE, FALSE),
+('SL-9988', 16, 'Toyota Coaster', 'Minibus', 160.00, TRUE, TRUE),
+('SL-6677', 6, 'Land Rover Defender', 'SUV', 250.00, TRUE, TRUE);
+
+INSERT INTO Payment (amount, date)
+VALUES 
+(500.00, '2024-01-05'),
+(1200.00, '2024-01-12'),
+(300.00, '2024-02-18'),
+(800.00, '2024-03-05'),
+(1500.00, '2024-04-10'),
+(2000.00, '2024-04-25'),
+(900.00, '2024-05-03'),
+(500.00, '2024-06-11'),
+(1100.00, '2024-07-19'),
+(1800.00, '2024-08-30');
+
+
+INSERT INTO BankTransfer (Trans_ID, receipt)
+VALUES 
+(1, 'BT-1001'),
+(2, 'BT-1002'),
+(3, 'BT-1003'),
+(4, 'BT-1004'),
+(5, 'BT-1005'),
+(6, 'BT-1006'),
+(7, 'BT-1007'),
+(8, 'BT-1008'),
+(9, 'BT-1009'),
+(10, 'BT-1010');
+
+
+INSERT INTO CardPayment (Card_ID, CardNumber, CVV)
+VALUES 
+(1, '1234567812345678', 123),
+(2, '8765432187654321', 456),
+(3, '2345678923456789', 789),
+(4, '9876543298765432', 321),
+(5, '3456789034567890', 654),
+(6, '6543210965432109', 987),
+(7, '4567890145678901', 123),
+(8, '5432109876543210', 456),
+(9, '5678901256789012', 789),
+(10, '8765432198765432', 321);
+
+INSERT INTO Booking (Pickup_loc, booking_status, no_of_participants, TourDate, CurrentLocation, Verification, remainingBudget, payid, pid, cusid, guide_id)
+VALUES 
+('Kandy', 'Confirmed', 4, '2024-09-15', 'Kandy', 'Verified', 500.00, 1, 1, 5, 3), 
+('Colombo', 'Pending', 2, '2024-10-01', 'Colombo', 'Pending', 300.00, 2, 2, 6, 4), 
+('Galle', 'Confirmed', 6, '2024-10-10', 'Galle', 'Verified', 1000.00, 3, 3, 9, 7), 
+('Sigiriya', 'Cancelled', 5, '2024-10-20', 'Sigiriya', 'Cancelled', 0.00, 4, 4, 10, 8), 
+('Nuwara Eliya', 'Confirmed', 3, '2024-11-02', 'Nuwara Eliya', 'Verified', 800.00, 5, 5, 5, 3),
+('Polonnaruwa', 'Pending', 7, '2024-11-15', 'Polonnaruwa', 'Pending', 1200.00, 6, 6, 6, 4),
+('Jaffna', 'Confirmed', 5, '2024-12-01', 'Jaffna', 'Verified', 700.00, 7, 7, 9, 7),
+('Trincomalee', 'Cancelled', 8, '2024-12-20', 'Trincomalee', 'Cancelled', 0.00, 8, 8, 10, 8),
+('Anuradhapura', 'Confirmed', 4, '2024-12-30', 'Anuradhapura', 'Verified', 600.00, 9, 9, 5, 3),
+('Dambulla', 'Pending', 6, '2024-12-31', 'Dambulla', 'Pending', 1500.00, 10, 10, 6, null);
+
+
+INSERT INTO Book_Vehicle (booking_id, vehicle_id, vehicle_status)
+VALUES 
+(1, 'SL-1234', 'Available'),
+(2, 'SL-5678', 'Booked'),
+(3, 'SL-9876', 'Available'),
+(4, 'SL-4321', 'Booked'),
+(5, 'SL-8765', 'Available'),
+(6, 'SL-1122', 'Booked'),
+(7, 'SL-5566', 'Available'),
+(8, 'SL-2233', 'Booked'),
+(9, 'SL-9988', 'Available'),
+(10, 'SL-6677', 'Booked');
+
+
+INSERT INTO VerifyBooking (staff_ID, booking_ID)
+VALUES 
+(1, 1),
+(1, 2),
+(2, 3),
+(2, 4),
+(1, 5),
+(2, 6),
+(1, 7),
+(2, 8),
+(1, 9),
+(2, 10);
+
