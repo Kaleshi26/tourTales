@@ -132,3 +132,22 @@ Add project to Tomcat server
 Run on http://localhost:8080/tourTales
 
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/Admin/Packagedashboard.png" alt="Packagedashboard" width="250" />
+  <img src="screenshots/Admin/newBookings.png" alt="newBookings" width="250" />
+  <img src="screenshots/Admin/AddTourPackage.png" alt="AddTourPackage" width="250" />
+</p>
+<p align="center">
+  <img src="home.png" alt="home1" width="250" />
+  <img src="home2.png" alt="home2" width="250" />
+  <img src="search.png" alt="Search" width="250" />
+  <img src="matched jobs.png" alt="Matched Jobs" width="250" />
+</p>
+<p align="center">
+  <img src="profile.png" alt="Profile" width="250" />
+  <img src="my status.png" alt="Status" width="250" />
+</p>
+
+
