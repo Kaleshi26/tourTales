@@ -140,14 +140,14 @@ Run on http://localhost:8080/tourTales
   <img src="screenshots/Admin/AddTourPackage.png" alt="AddTourPackage" width="250" />
 </p>
 <p align="center">
-  <img src="home.png" alt="home1" width="250" />
-  <img src="home2.png" alt="home2" width="250" />
-  <img src="search.png" alt="Search" width="250" />
-  <img src="matched jobs.png" alt="Matched Jobs" width="250" />
+  <img src="screenshots/Tour guide pages/tour details.png" alt="tour details" width="250" />
+  <img src="screenshots/Tour guide pages/delete tour.png" alt="delete tour" width="250" />
+  <img src="screenshots/Tour guide pages/tour guide dashboard.png" alt="tour guide dashboard" width="250" />
 </p>
 <p align="center">
-  <img src="profile.png" alt="Profile" width="250" />
-  <img src="my status.png" alt="Status" width="250" />
+  <img src="screenshots/Staff pages/new_bookings.png" alt="new_bookings" width="250" />
+  <img src="screenshots/Staff pages/user_dashboard.png" alt="user_dashboard" width="250" />
+  <img src="screenshots/Staff pages/verify_booking.png" alt="verify_booking" width="250" />
 </p>
 
 
